@@ -1,0 +1,363 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+header{
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: rgba(217, 57, 238, 0.836);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.text-animation{
+    font-size: 28px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20{
+        content: "Web Designer";
+    }
+    21%,
+    40%{
+        content: "Web Designer";
+    }
+    41%,
+    60%{
+        content: "Web Designer";
+    }
+    61%,
+    80%{
+        content: "Web Designer";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+.nav-links{
+    display: flex;
+    gap: 2rem;
+}
+li a{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+}
+li a::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 5px;
+    top: 25px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right,rgb(161, 117, 228), rgb(255, 0, 255));
+}
+li a:hover::before{
+    width: 100%;
+}
+.visit-btn{
+    padding: 0.8rem;
+    border-radius: 3rem;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right,rgba(255, 0, 255), rgb(0, 157, 255));
+}
+.visit-btn:hover{
+    background: linear-gradient(to right,rgb(255, 30, 30, 0.767), rgb(255, 0, 255));
+    transform: scale(1.03);
+}
+#menu-icon{
+    font-size: 2rem;
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 8rem 12%;
+    width: 100%;
+    position: relative;
+}
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about .about-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+.about img{
+    width: 30vw;
+    border-radius: 50%;
+}
+.info-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.info-box h3{
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.info-box span{
+    background: linear-gradient(to right,rgb(255, 0, 255),rgb(0, 157, 255));
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+}
+.btn-group{
+    display: flex;
+    gap: 1rem;
+}
+.btn{
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid rgb(233, 67, 197);
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out;
+}
+
+.section-title{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+.hobby-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.grid{
+    display: flex;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+.grid-card{
+    background: red;
+    border: 2px solid #1b0707b9;
+    border-radius: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.grid-card:hover{
+    transform: scale(1.02);
+    background-color: rgba(14, 1, 1, 0.623);
+    color: rgb(255, 255, 255);
+}
+.grid-card i{
+    font-size: 1,5rem;
+    font-weight: 500;
+    background: linear-gradient(to right, #009dff, #ff00ff );
+    background-clip: text;
+    color: transparent;
+}
+::-webkit-scrollbar{
+    width: 20px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(219, 219, 219);
+}
+::-webkit-scrollbar-thumb{
+    background-color: linear-gradient(to right, #009dff, #ff00ff );;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0101;
+    color: #fff;
+    text-align: center;
+}
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #007bff;
+    background-color: #333;
+    color: #fff;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+@media(max-width:1280px){
+    hwader{
+        padding: 1rem 2rem;
+        gap: 2rem;
+    }
+    .about .about-container{
+        gap: 3rem;
+    }
+    .hobby-info{
+        flex-direction: column;
+    }
+    .input-box input{
+        padding: 2rem 5rem;
+        font-size: 2.5rem;
+    }
+    .input input::placeholder{
+        padding: 2rem 5rem;
+        font-size: 2.5rem;
+    }
+    .input-box i{
+        font-size: 22.5rem;
+    }
+}
+
+@media(max-width:768px){
+    header{
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+    header .logo{
+        font-size: 1rem;
+    }
+    header .visit-btn{
+        display: none;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+    .input-box input{
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+    .input-box input::placeholder{
+        font-size: 1.5rem;
+    }
+    .input-box i{
+        display: none;
+    }
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .hobby-info img{
+        width: 70vw;
+    }
+}
+
+@media(max-width:600px){
+    header menu-icon{
+        display: flex;
+    }
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 3rem;
+    }
+}
